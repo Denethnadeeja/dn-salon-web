@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DENETH SALON | Luxury Beauty Experience</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.0/dist/lenis.min.js"></script>
+</head>
+<body class="bg-gradient-to-b from-pink-50 to-white font-sans antialiased">
+
+  <!-- Animated Background -->
+  <div id="three-bg" class="fixed inset-0 -z-10 opacity-10"></div>
+
+  <!-- Header -->
+  <header class="relative bg-gradient-to-r from-pink-600 to-pink-700 text-white py-16 shadow-2xl">
+    <div class="max-w-6xl mx-auto px-4" data-aos="fade-up">
+      <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight mb-4">
+        DENETH <span class="text-pink-200">SALON</span>
+      </h1>
+      <p class="text-xl md:text-2xl font-light opacity-90">
+        Redefining Beauty with Precision & Artistry
+      </p>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 bg-white/90 backdrop-blur-md shadow-sm z-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between items-center py-4">
+        <div class="flex space-x-8">
+          <a href="#home" class="nav-link text-pink-600 font-medium hover:text-pink-700 transition-colors">Home</a>
+          <a href="#services" class="nav-link text-gray-600 hover:text-pink-600 transition-colors">Services</a>
+          <a href="#about" class="nav-link text-gray-600 hover:text-pink-600 transition-colors">About</a>
+          <a href="#pricing" class="nav-link text-gray-600 hover:text-pink-600 transition-colors">Pricing</a>
+          <a href="#contact" class="nav-link text-gray-600 hover:text-pink-600 transition-colors">Contact</a>
+        </div>
+        <button onclick="toggleBookingForm()" class="bg-pink-600 text-white px-6 py-2 rounded-full hover:bg-pink-700 transition-colors shadow-lg">
+          Book Now
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-4 py-16 space-y-24">
+
+    <!-- Hero Section -->
+    <section id="home" class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6" data-aos="fade-right">
+        <h2 class="text-4xl font-bold text-gray-800">
+          Experience Luxury Beauty Care
+        </h2>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Immerse yourself in our sanctuary of beauty and wellness. Our expert stylists combine cutting-edge techniques with premium products to deliver transformative results.
+        </p>
+        <div class="flex space-x-4">
+          <button class="bg-pink-600 text-white px-8 py-3 rounded-full hover:bg-pink-700 transition-colors">
+            View Services
+          </button>
+          <button class="border-2 border-pink-600 text-pink-600 px-8 py-3 rounded-full hover:bg-pink-50 transition-colors">
+            Learn More
+          </button>
+        </div>
+      </div>
+      <div class="relative h-96 bg-gradient-to-r from-pink-100 to-pink-200 rounded-2xl shadow-xl" data-aos="fade-left" id="p5-canvas"></div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="space-y-12">
+      <div class="text-center" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Premium Services</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Experience our curated selection of luxury beauty treatments</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Service Cards -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" data-aos="zoom-in">
+          <div class="w-12 h-12 bg-pink-100 rounded-lg mb-4 flex items-center justify-center">💇</div>
+          <h3 class="text-xl font-semibold mb-2">Hair Mastery</h3>
+          <p class="text-gray-600 mb-4">Precision cuts, vibrant coloring, and transformative treatments</p>
+          <ul class="space-y-2 text-pink-600">
+            <li>• Advanced Coloring Techniques</li>
+            <li>• Keratin Smoothing Therapy</li>
+            <li>• Custom Style Creation</li>
+          </ul>
+        </div>
+        <!-- Add similar cards for other services -->
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="space-y-8">
+      <div class="text-center" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Transparent Pricing</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Premium services with clear, competitive pricing</p>
+      </div>
+      <div class="grid md:grid-cols-4 gap-6">
+        <!-- Pricing Cards -->
+        <div class="bg-white p-6 rounded-xl border border-pink-100" data-aos="flip-up">
+          <h3 class="text-lg font-semibold mb-2">Hair Styling</h3>
+          <p class="text-3xl font-bold text-pink-600 mb-4">Rs. 1500+</p>
+          <ul class="space-y-2 text-gray-600">
+            <li>• Precision Cutting</li>
+            <li>• Blowout Styling</li>
+            <li>• Iron Work</li>
+          </ul>
+        </div>
+        <!-- Add similar pricing cards -->
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-white rounded-2xl shadow-xl p-12" data-aos="fade-up">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-2">Ready for Transformation?</h2>
+        <p class="text-gray-600 mb-8">Book your consultation today</p>
+        <form class="space-y-6 text-left">
+          <div class="grid md:grid-cols-2 gap-6">
+            <input type="text" placeholder="Your Name" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent">
+            <input type="email" placeholder="Email Address" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent">
+          </div>
+          <textarea rows="4" placeholder="Your Message" class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"></textarea>
+          <button class="w-full bg-pink-600 text-white py-3 rounded-lg hover:bg-pink-700 transition-colors">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-4 gap-8">
+      <!-- Footer Sections -->
+    </div>
+  </footer>
+
+  <!-- Booking Modal -->
+  <div id="booking-modal" class="fixed inset-0 bg-black/50 hidden items-center justify-center p-4 z-50">
+    <div class="bg-white rounded-2xl p-8 max-w-md w-full animate-slide-up">
+      <!-- Modal Content -->
+    </div>
+  </div>
+
+  <script>
+    // Initialize AOS
+    AOS.init({ duration: 800, once: true });
+
+    // Smooth scroll initialization
+    const lenis = new Lenis()
+    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+
+    // Three.js Background
+    function initThreeJS() {
+      // Add floating particles background
+    }
+
+    // p5.js Interactive Elements
+    function initP5() {
+      new p5(p => {
+        p.setup = () => {
+          let canvas = p.createCanvas(500, 400);
+          canvas.parent('p5-canvas');
+        };
+        p.draw = () => {
+          // Add interactive elements
+        };
+      });
+    }
+
+    // Modal Handling
+    function toggleBookingForm() {
+      document.getElementById('booking-modal').classList.toggle('hidden');
+    }
+
+    // Initialize all
+    document.addEventListener('DOMContentLoaded', () => {
+      initThreeJS();
+      initP5();
+    });
+  </script>
+
+  <style>
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: #db2777; transition: width 0.3s; }
+    .nav-link:hover::after { width: 100%; }
+
+    @keyframes slide-up {
+      0% { transform: translateY(20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    .animate-slide-up { animation: slide-up 0.3s ease-out; }
+  </style>
+</body>
+</html>
